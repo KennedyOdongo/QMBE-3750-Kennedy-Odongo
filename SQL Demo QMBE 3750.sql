@@ -1,10 +1,8 @@
 USE sakila;
+show tables;
 
-USE world;
+SHOW TABLES;
 
+# Create a database with your name. This is where we will create and store tables
+USE Kennedy;
 
-SELECT *
-FROM world.city;
-
-SELECT Name 
-FROM world.city;
