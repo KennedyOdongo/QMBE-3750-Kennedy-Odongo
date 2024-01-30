@@ -281,4 +281,4 @@ VALUES
 ('SW124','Wilder','Steven','7354 Rockville Road','San Vista','TX','72510')
 ;
 
-
+SHOW TABLES;
