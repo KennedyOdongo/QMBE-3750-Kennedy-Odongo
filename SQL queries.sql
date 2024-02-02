@@ -2,9 +2,13 @@ USE bits;
 
 SHOW TABLES;
 
+# For the most part you dont want to use * when selecting columns
+#1. Not specific enough
+#2. May take long to run if you have a large dataset
 SELECT *
 FROM tasks;
 
+# a specific select statement
 SELECT price, taskid
 FROM tasks;
 
