@@ -28,7 +28,16 @@ LIMIT 10;
 SELECT price,category
 FROM tasks
 WHERE price BETWEEN 10 AND 100
-GROUP BY price,category
+GROUP BY category
+HAVING ABS(price)>40
+ORDER BY price
+LIMIT 10;
+
+# What happens if the order of the queries is reversed? 
+SELECT price,category
+FROM tasks
+WHERE price BETWEEN 10 AND 100
+GROUP BY category
 HAVING ABS(price)>40
 ORDER BY price
 LIMIT 10;
