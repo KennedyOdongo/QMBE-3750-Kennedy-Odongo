@@ -2,6 +2,7 @@ USE bits;
 
 SHOW TABLES;
 
+
 # For the most part you dont want to use * when selecting columns
 #1. Not specific enough
 #2. May take long to run if you have a large dataset
@@ -21,14 +22,14 @@ FROM tasks
 WHERE price >= 50
 GROUP BY price,category
 HAVING ABS(price)>40
-ORDER BY price
+ORDER BY price DESC
 LIMIT 10;
 
 
 SELECT price,category
 FROM tasks
 WHERE price BETWEEN 10 AND 100
-GROUP BY category
+GROUP BY 1,2
 HAVING ABS(price)>40
 ORDER BY price
 LIMIT 10;
@@ -37,7 +38,7 @@ LIMIT 10;
 SELECT price,category
 FROM tasks
 WHERE price BETWEEN 10 AND 100
-GROUP BY category
+GROUP BY category, price
 HAVING ABS(price)>40
 ORDER BY price
 LIMIT 10;
