@@ -4,6 +4,9 @@ SHOW TABLES;
 SELECT * 
 FROM tasks;
 
+SELECT * 
+FROM client;
+
 #creating a new table from an existing table
 CREATE TABLE category_drm AS
 SELECT *
@@ -28,8 +31,8 @@ ALTER TABLE category_drm
 MODIFY COLUMN email VARCHAR(320); -- MySQL
 
 -- For SQL Server, the command is ALTER COLUMN
--- ALTER TABLE employees
--- ALTER COLUMN email NVARCHAR(320);
+-- ALTER TABLE category_drm
+-- ALTER COLUMN email VARCHAR(320);
 
 #### Drop column
 ALTER TABLE category_drm
@@ -40,6 +43,14 @@ CREATE TABLE tasks_number AS
 SELECT taskid, COUNT(*) AS task_count
 FROM tasks
 GROUP BY taskid;
+
+CREATE TABLE average_credit AS
+SELECT state, AVG(CreditLimit) AS average
+FROM client
+GROUP BY state;
+
+SELECT *
+FROM average_credit;
 
 SELECT *
 FROM tasks_number;
