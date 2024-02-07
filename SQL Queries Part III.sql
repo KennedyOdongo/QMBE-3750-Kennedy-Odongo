@@ -11,9 +11,9 @@ SELECT *
 FROM client
 ORDER BY balance DESC;
 
-SELECT * 
+SELECT street, city
 FROM client
-ORDER BY balance DESC, zipcode DESC;
+ORDER BY 1 DESC, 2 DESC;
 
 #Math functions in SQL
 
@@ -22,5 +22,14 @@ from client;
 
 SELECT LOG(creditlimit) as log_credit, zipcode
 from client;
+
+select *
+from consultant;
+
+SELECT POW(Rate, 2) as rate_squared
+from consultant;
+
+SELECT SQRT(Rate) as square_root_rate
+FROM consultant;
 
 
