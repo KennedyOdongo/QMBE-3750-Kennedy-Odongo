@@ -2,6 +2,9 @@ USE bits_copy;
 
 SHOW TABLES;
 
+SELECT * 
+FROM client;
+
 # ORDER BY USING MULTIPLE COLUMNS
 SELECT * 
 FROM client
@@ -11,22 +14,35 @@ SELECT *
 FROM client
 ORDER BY balance DESC;
 
-SELECT street, city
+SELECT * 
+FROM client
+ORDER BY balance DESC, city ASC;
+
+
+SELECT * 
+FROM client
+ORDER BY city DESC;
+
+
+SELECT *
 FROM client
 ORDER BY 1 DESC, 2 DESC;
 
 #Math functions in SQL
 
-SELECT ABS(balance) as abs_balance, clientname
-from client;
+SELECT ABS(balance) AS abs_balance, clientname
+FROM client;
 
-SELECT LOG(creditlimit) as log_credit, zipcode
-from client;
+SELECT LOG(creditlimit), zipcode
+FROM client;
 
 select *
 from consultant;
 
-SELECT POW(Rate, 2) as rate_squared
+SELECT rate*hours 
+FROM consultant;
+
+SELECT POW(Rate, 2.5) as rate_squared
 from consultant;
 
 SELECT SQRT(Rate) as square_root_rate
@@ -51,7 +67,7 @@ SELECT REVERSE (clientname) as reverse_client
 FROM client;
 
 #SUBSTRING(string, start, length)
-SELECT SUBSTRING(city,1,3) as substring_text
+SELECT SUBSTRING(city,2,3) as substring_text
 FROM client;
 
 #CONCAT- Merge columns
@@ -66,7 +82,9 @@ FROM client;
 
 #CHAR_LENGTH(string)
 SELECT CHAR_LENGTH (street) as longest_street_name
-FROM client;
+FROM client
+ORDER BY 1 DESC
+LIMIT 1;
 
 select * from client;
 
