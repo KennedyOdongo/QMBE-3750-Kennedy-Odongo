@@ -32,4 +32,44 @@ from consultant;
 SELECT SQRT(Rate) as square_root_rate
 FROM consultant;
 
+#### String functions
+
+SELECT UPPER(street) as street_upper
+from consultant;
+
+SELECT LOWER(street) as street_upper
+from consultant;
+
+SELECT REVERSE (clientname) as reverse_client
+from client;
+
+# If you do not rename the column it will show up as the function
+SELECT LEFT (city, 3) 
+FROM client;
+
+SELECT REVERSE (clientname) as reverse_client
+FROM client;
+
+#SUBSTRING(string, start, length)
+SELECT SUBSTRING(city,1,3) as substring_text
+FROM client;
+
+#CONCAT- Merge columns
+#CONCAT(string1, string2, ...., string_n)
+#Can use to create primary key and unique identifiers
+
+SELECT CONCAT(city, street) as city_street
+FROM client;
+
+SELECT CONCAT(clientnum, zipcode) as clientnum_zip
+FROM client;
+
+#CHAR_LENGTH(string)
+SELECT CHAR_LENGTH (street) as longest_street_name
+FROM client;
+
+select * from client;
+
+
+
 
