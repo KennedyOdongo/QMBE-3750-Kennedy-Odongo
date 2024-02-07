@@ -70,6 +70,24 @@ FROM client;
 
 select * from client;
 
+#Aggregate / Groupby functions
+
+SELECT SUM(balance) AS total_balance
+FROM client;
+
+SELECT AVG(creditlimit) AS credit_balance
+FROM client;
+
+SELECT AVG(creditlimit) AS credit_balance, creditlimit
+FROM client
+GROUP BY creditlimit;
+
+# using column indexing
+SELECT COUNT(*) AS credit_limit_per_client, creditlimit
+FROM client
+GROUP BY 2;
+
+
 
 
 
