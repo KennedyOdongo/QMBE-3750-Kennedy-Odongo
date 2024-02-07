@@ -87,7 +87,29 @@ SELECT COUNT(*) AS credit_limit_per_client, creditlimit
 FROM client
 GROUP BY 2;
 
+#The ROLLUP operator enhances the capabilities of the GROUP BY 
+#clause by enabling the computation of subtotals and grand
+#totals for a set of columns. It produces a result set that
+# incorporates rows at various levels of aggregation. 
+ #ROLLUP streamlines the aggregation process by 
+ #eliminating the need for separate queries to obtain
+ #subtotals and totals, resulting in a more streamlined and efficient approach.
+ #It is a powerful extension of the GROUP BY clause, 
+#enabling users to generate summary reports effortlessly.
+
+#ROLLUP
+SELECT AVG(creditlimit) AS credit_limit_avg, creditlimit
+FROM client
+GROUP BY ROLLUP(2);
+
+SELECT AVG(Creditlimit)
+from client;
 
 
+#CASE WHEN
+# The CASE expression goes through conditions and returns a value when the first 
+#condition is met (like an if-then-else statement). So, once a condition is true, 
+#it will stop reading and return the result. If no conditions are true, 
+#it returns the value in the ELSE clause.
 
-
+If there is no ELSE part and no conditions are true, it returns NULL.
