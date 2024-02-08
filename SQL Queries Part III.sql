@@ -204,3 +204,15 @@ GROUP BY
     WHEN CreditLimit<= 7500 THEN "better credit"
     ELSE "good credit"
   END;
+  
+  SELECT * 
+  FROM client;
+ 
+ #Single quotes vs. double quotes.
+  
+  SELECT city,CASE
+  WHEN city IN ('Easton','Sunland', 'Lizton') THEN "Region 1"
+  WHEN city IN ('Harpersburg','Amo','Tri City') THEN "Region 2"
+  ELSE "Region 3"
+  END AS 'region'
+  FROM client;
