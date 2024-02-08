@@ -219,13 +219,27 @@ GROUP BY
   
   
 #ORDER BY CASE
+#Sort by city, and clientname but if city is Easton, then sort by city then zipcode
 SELECT *
 FROM client
-ORDER BY 
+ORDER BY city,
     CASE
-	WHEN CreditLimit<= 2500 THEN "bad credit"
-    WHEN CreditLimit<= 5000 THEN "okay credit"
-    WHEN CreditLimit<= 7500 THEN "better credit"
-    ELSE "good credit"
+        WHEN city = "Easton" THEN zipcode
+        ELSE clientname
     END;
+    
+    
+SELECT *
+FROM tasks;
+
+# ORDER BY category, then description. But if category  ='SOM' then order by category then price
+SELECT *
+FROM tasks
+ORDER BY category,
+    CASE
+        WHEN category = "SOM" THEN price
+        ELSE description
+    END;
+    
+    
     
