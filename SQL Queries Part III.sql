@@ -221,10 +221,11 @@ GROUP BY
 #ORDER BY CASE
 SELECT *
 FROM client
-ORDER BY creditlimit,
+ORDER BY 
     CASE
 	WHEN CreditLimit<= 2500 THEN "bad credit"
     WHEN CreditLimit<= 5000 THEN "okay credit"
     WHEN CreditLimit<= 7500 THEN "better credit"
     ELSE "good credit"
-    END DESC;
+    END;
+    
