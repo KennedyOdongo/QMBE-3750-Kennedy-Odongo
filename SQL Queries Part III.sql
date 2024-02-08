@@ -241,5 +241,14 @@ ORDER BY category,
         ELSE description
     END;
     
-    
+#SUBQUERIES IN SQL -> Query within a query
+
+SELECT client.*
+  FROM (
+        SELECT *
+          FROM client
+         WHERE creditlimit =  5000
+       ) client
+ WHERE LEFT(city,1) <> 'A' ;
+
     
