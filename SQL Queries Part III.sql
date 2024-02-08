@@ -251,4 +251,11 @@ SELECT client.*
        ) client
  WHERE LEFT(city,1) <> 'A' ;
 
+
+SELECT * FROM tasks;
+
+SELECT * FROM
+(SELECT * FROM tasks
+WHERE price<=65) tasks
+WHERE category = 'DRM';
     
