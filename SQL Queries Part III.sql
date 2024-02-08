@@ -66,6 +66,7 @@ FROM client;
 SELECT REVERSE (clientname) as reverse_client
 FROM client;
 
+#2/8/2024
 #SUBSTRING(string, start, length)
 SELECT SUBSTRING(city,2,3) as substring_text
 FROM client;
@@ -123,11 +124,45 @@ GROUP BY ROLLUP(2);
 SELECT AVG(Creditlimit)
 from client;
 
+SHOW TABLES;
+
+SELECT * 
+FROM client;
+
+
+SELECT SUM(balance) AS total_balance, creditlimit
+FROM client
+GROUP BY ROLLUP(2);
+
+SELECT SUM(balance)
+FROM client;
+
+
 
 #CASE WHEN
 # The CASE expression goes through conditions and returns a value when the first 
 #condition is met (like an if-then-else statement). So, once a condition is true, 
 #it will stop reading and return the result. If no conditions are true, 
-#it returns the value in the ELSE clause.
+#it returns the value in the ELSE clause.If there is no ELSE part and no conditions are true, it returns NULL.
 
-If there is no ELSE part and no conditions are true, it returns NULL.
+# This is similar to "if then" statement in other programming languages
+#Syntax
+
+#CASE
+    #WHEN condition1 THEN result1
+    #WHEN condition2 THEN result2
+    #WHEN conditionN THEN resultN
+    #ELSE result
+#END;
+
+select * from
+client;
+
+SELECT CreditLimit,
+CASE
+    WHEN CreditLimit<= 2500 THEN "bad credit"
+    WHEN  CreditLimit<= 5000 THEN "okay credit"
+    WHEN CreditLimit<= 75000 THEN "better credit"
+    ELSE "good credit"
+END AS credit_rating
+FROM client;
