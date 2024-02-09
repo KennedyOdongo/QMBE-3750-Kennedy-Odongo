@@ -280,8 +280,8 @@ INNER JOIN consultant ON client.consltnum=consultant.consltnum;
 #referencing tables
 
 SELECT a.clientnum, a.clientname, b.consltnum
-FROM client a
-INNER JOIN consultant b ON a.consltnum=b.consltnum;
+FROM client a # a refers to the client tables
+INNER JOIN consultant b ON a.consltnum=b.consltnum; # b refers to the consultant's table
 
 
 
