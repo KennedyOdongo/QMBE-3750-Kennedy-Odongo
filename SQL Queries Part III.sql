@@ -264,5 +264,47 @@ WHERE price<=65;
 
 SHOW TABLES;
 
+#JOINS
+# Identify the primary key and foreign key
+# select rows by table.column name syntax
+
+
+SELECT client.clientnum, client.clientname, consultant.consltnum
+FROM client # This is your left table
+JOIN consultant ON client.consltnum=consultant.consltnum; # This is your right table
+
+SELECT client.clientnum, client.clientname, consultant.consltnum
+FROM client
+INNER JOIN consultant ON client.consltnum=consultant.consltnum;
+
+#referencing tables
+
+SELECT a.clientnum, a.clientname, b.consltnum
+FROM client a
+INNER JOIN consultant b ON a.consltnum=b.consltnum;
+
+
+
+
+
+
+
+
+
+SELECT client.clientnum, client.clientname, consultant.consltnum
+FROM client
+LEFT JOIN consultant ON client.consltnum=consultant.consltnum;
+
+SELECT client.clientnum, client.clientname, consultant.consltnum
+FROM client
+RIGHT JOIN consultant ON client.consltnum=consultant.consltnum;
+
+SELECT client.clientnum, client.clientname, consultant.consltnum
+FROM client
+CROSS JOIN consultant ON client.consltnum=consultant.consltnum;
+
+
+
+
 
     
