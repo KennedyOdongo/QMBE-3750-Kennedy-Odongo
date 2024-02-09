@@ -109,11 +109,11 @@ GROUP BY 2;
 #The ROLLUP operator enhances the capabilities of the GROUP BY 
 #clause by enabling the computation of subtotals and grand
 #totals for a set of columns. It produces a result set that
-# incorporates rows at various levels of aggregation. 
- #ROLLUP streamlines the aggregation process by 
- #eliminating the need for separate queries to obtain
- #subtotals and totals, resulting in a more streamlined and efficient approach.
- #It is a powerful extension of the GROUP BY clause, 
+#incorporates rows at various levels of aggregation. 
+#ROLLUP streamlines the aggregation process by 
+#eliminating the need for separate queries to obtain
+#subtotals and totals, resulting in a more streamlined and efficient approach.
+#It is a powerful extension of the GROUP BY clause, 
 #enabling users to generate summary reports effortlessly.
 
 #ROLLUP
@@ -137,8 +137,6 @@ GROUP BY ROLLUP(2);
 SELECT SUM(balance)
 FROM client;
 
-
-
 #CASE WHEN
 # The CASE expression goes through conditions and returns a value when the first 
 #condition is met (like an if-then-else statement). So, once a condition is true, 
@@ -154,9 +152,6 @@ FROM client;
     #WHEN conditionN THEN resultN
     #ELSE result
 #END;
-
-select * from
-client;
 
 SELECT CreditLimit,
 CASE
@@ -258,4 +253,7 @@ SELECT * FROM
 (SELECT * FROM tasks
 WHERE price<=65) tasks
 WHERE category = 'DRM';
+
+
+
     
