@@ -183,6 +183,9 @@ GROUP BY
     ELSE "good credit"
   END;
   
+  SELECT creditlimit
+  FROM client;
+  
   
   SELECT 
   CASE
@@ -197,7 +200,7 @@ GROUP BY
   CASE
   WHEN CreditLimit<= 2500 THEN "bad credit"
     WHEN  CreditLimit<= 5000 THEN "okay credit"
-    WHEN CreditLimit<= 7500 THEN "better credit"
+    WHEN CreditLimit<= 7500 THEN 'better credit'
     ELSE "good credit"
   END;
   
@@ -259,6 +262,10 @@ SELECT * FROM
 WHERE price<=65) tasks
 WHERE category = 'DRM';
 
+SELECT * 
+FROM tasks
+WHERE price<=65 AND category = 'DRM';
+
 SELECT * FROM tasks
 WHERE price<=65;
 
@@ -281,7 +288,7 @@ INNER JOIN consultant ON client.consltnum=consultant.consltnum;
 
 SELECT a.clientnum, a.clientname, b.consltnum
 FROM client a # a refers to the client tables
-INNER JOIN consultant b ON a.consltnum=b.consltnum; # b refers to the consultant's table
+INNER JOIN consultant b ON a.consltnum=b.consltnum; # b refers to the consultant's table  
 
 
 
