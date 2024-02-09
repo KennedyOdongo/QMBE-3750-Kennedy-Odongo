@@ -141,7 +141,8 @@ FROM client;
 # The CASE expression goes through conditions and returns a value when the first 
 #condition is met (like an if-then-else statement). So, once a condition is true, 
 #it will stop reading and return the result. If no conditions are true, 
-#it returns the value in the ELSE clause.If there is no ELSE part and no conditions are true, it returns NULL.
+#it returns the value in the ELSE clause.If there is no ELSE part 
+#and no conditions are true, it returns NULL.
 
 # This is similar to "if then" statement in other programming languages
 #Syntax
@@ -245,6 +246,10 @@ SELECT client.*
          WHERE creditlimit =  5000
        ) client
  WHERE LEFT(city,1) <> 'A' ;
+ 
+SELECT *
+FROM client
+WHERE creditlimit =  5000;
 
 
 SELECT * FROM tasks;
@@ -254,6 +259,10 @@ SELECT * FROM
 WHERE price<=65) tasks
 WHERE category = 'DRM';
 
+SELECT * FROM tasks
+WHERE price<=65;
+
+SHOW TABLES;
 
 
     
