@@ -271,6 +271,8 @@ WHERE price<=65;
 
 SHOW TABLES;
 
+
+
 #JOINS
 # Identify the primary key and foreign key
 # select rows by table.column name syntax
@@ -291,8 +293,9 @@ INNER JOIN consultant b ON a.consltnum=b.consltnum; # b refers to the consultant
 
 
 SELECT client.clientnum, client.clientname, consultant.consltnum
-FROM client
+FROM client #left table
 LEFT JOIN consultant ON client.consltnum=consultant.consltnum;
+
 
 SELECT client.clientnum, client.clientname, consultant.consltnum
 FROM client
@@ -308,16 +311,14 @@ FROM client
 JOIN consultant 
 USING (consltnum);
 
-
-
 #Joining two or more tables is called a complex join - A join is a merge
 
 SELECT w.ordernum, w.orderdate, c.clientnum, c.clientname, 
 o.taskid, t.description, t.category, t.price
 FROM workorders w, client c, tasks t, orderline o
-WHERE c.clientnum = w.clientnum 
-AND w.ordernum = o.ordernum
-AND o.taskid = t.taskid
+WHERE c.clientnum = w.clientnum # 1st JOIN workorders and client
+AND w.ordernum = o.ordernum #2nd JOIN workorders and oderline
+AND o.taskid = t.taskid #3rd JOIN orderline and task table
 ORDER BY w.ordernum;
 
 #A union is like append
@@ -327,7 +328,7 @@ SELECT c.clientnum, c.clientname
 FROM client c
 WHERE consltnum = 19;
 
-SELECT c.clientnum, c.clientname
+SELECT c.clientnum, c.zipcode
 FROM client c, workorders w
 WHERE c.clientnum =  w.clientnum;
 
@@ -339,7 +340,42 @@ SELECT c.clientnum, c.clientname
 FROM client c, workorders w
 WHERE c.clientnum =  w.clientnum;
 
+#Common Table Expressions (CTE)
+#In SQL, CTE stands for Common Table Expression. 
+#It's a temporary result set that's returned 
+#by a single statement and can only be 
+#used within the context of a larger query
+
+SELECT *
+FROM client;
+
+SELECT
+  clientname,
+  balance
+FROM
+  client
+WHERE
+-- filter for clients with above-average balances
+  balance > (
+    SELECT
+      AVG(balance)
+    FROM
+      client
+  );
+  
+  
+WITH client_balances AS (
+SELECT clientnum, AVG(balance) as average_balance
+FROM client c
+GROUP BY clientnum)
 
 
+SELECT w.clientnum, w.orderdate, c.average_balance
+FROM workorders w
+JOIN client_balances c
+ON w.clientnum = c.clientnum;
+SELECT clientnum, AVG(balance) as average_balance
+FROM client c
+GROUP BY clientnum;
 
-    
+SHOW TABLES;
