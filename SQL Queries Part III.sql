@@ -302,6 +302,14 @@ SELECT client.clientnum, client.clientname, consultant.consltnum
 FROM client
 CROSS JOIN consultant ON client.consltnum=consultant.consltnum;
 
+# A different syntax.
+SELECT client.clientnum, client.clientname, consultant.consltnum
+FROM client
+JOIN consultant 
+USING (consltnum);
+
+
+
 #Joining two or more tables is called a complex join - A join is a merge
 
 SELECT w.ordernum, w.orderdate, c.clientnum, c.clientname, 
