@@ -3,7 +3,7 @@ USE bits_copy;
 SHOW TABLES;
 
 SELECT * 
-FROM client;
+FROM orderline;
 
 # ORDER BY USING MULTIPLE COLUMNS
 SELECT * 
@@ -275,7 +275,6 @@ SHOW TABLES;
 # Identify the primary key and foreign key
 # select rows by table.column name syntax
 
-
 SELECT client.clientnum, client.clientname, consultant.consltnum
 FROM client # This is your left table
 JOIN consultant ON client.consltnum=consultant.consltnum; # This is your right table
@@ -291,13 +290,6 @@ FROM client a # a refers to the client tables
 INNER JOIN consultant b ON a.consltnum=b.consltnum; # b refers to the consultant's table  
 
 
-
-
-
-
-
-
-
 SELECT client.clientnum, client.clientname, consultant.consltnum
 FROM client
 LEFT JOIN consultant ON client.consltnum=consultant.consltnum;
@@ -310,6 +302,34 @@ SELECT client.clientnum, client.clientname, consultant.consltnum
 FROM client
 CROSS JOIN consultant ON client.consltnum=consultant.consltnum;
 
+#Joining two or more tables is called a complex join - A join is a merge
+
+SELECT w.ordernum, w.orderdate, c.clientnum, c.clientname, 
+o.taskid, t.description, t.category, t.price
+FROM workorders w, client c, tasks t, orderline o
+WHERE c.clientnum = w.clientnum 
+AND w.ordernum = o.ordernum
+AND o.taskid = t.taskid
+ORDER BY w.ordernum;
+
+#A union is like append
+
+
+SELECT c.clientnum, c.clientname
+FROM client c
+WHERE consltnum = 19;
+
+SELECT c.clientnum, c.clientname
+FROM client c, workorders w
+WHERE c.clientnum =  w.clientnum;
+
+SELECT c.clientnum, c.clientname
+FROM client c
+WHERE consltnum = 19
+UNION
+SELECT c.clientnum, c.clientname
+FROM client c, workorders w
+WHERE c.clientnum =  w.clientnum;
 
 
 
