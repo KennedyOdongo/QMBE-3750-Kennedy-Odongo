@@ -13,9 +13,17 @@ SELECT taskid, description, price
 FROM tasks
 WHERE category IN ('ACC','HAM','PRI','UPG');
 
-SELECT * FROM hardware;
+SELECT * 
+FROM hardware; -- when you run this query, the DBMS actually runs the code above
 
 CREATE or REPLACE VIEW Hardware AS
 SELECT taskid, description, price
 FROM tasks
 WHERE category IN ('ACC','HAM','PRI','UPG','OTH');
+
+
+
+# INDEXES
+
+
+
