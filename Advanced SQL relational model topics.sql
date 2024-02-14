@@ -24,10 +24,14 @@ WHERE category IN ('ACC','HAM','PRI','UPG','OTH');
 -- How do we know it is a virtual table?
 
 DESCRIBE TABLE hardware;
+
 DESCRIBE TABLE tasks;
 
 
 # INDEXES
+-- It is the main mechanism for increasing the efficiency with which data is retreived from a database table
+-- An index is a database-generated copy of a selected column organized so that it directly refers to the 
+-- storage location of the data
 
 
 
