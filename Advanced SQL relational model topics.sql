@@ -75,5 +75,27 @@ SHOW INDEXES FROM client;
 
 ## SECURITY in SQL
 
+-- syntax
+-- GRANT privilege_type ON table_name TO user_name
+-- ON object
+-- TO user_role;
+
+GRANT SELECT ON client TO Kennedy; -- will not work, need to create DB users
+GRANT INSERT ON tasks TO Smith, Park;
+
+GRANT ALL PRIVILEGES ON bits TO admin;
+
+-- syntax
+-- REVOKE privilege_type
+-- ON object
+-- FROM user_role;
+
+
+REVOKE SELECT ON bits FROM Kennedy;
+
+
+
+
+
 
 
