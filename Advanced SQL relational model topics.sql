@@ -31,6 +31,8 @@ WHERE category IN ('ACC','HAM','PRI','UPG','OTH');
 -- How do we know it is a virtual table?
 
 DESCRIBE TABLE hardware;
+DESCRIBE TABLE client;
+
 
 DESCRIBE TABLE tasks;
 
@@ -48,7 +50,7 @@ DESCRIBE TABLE tasks;
 -- CREATE INDEX index_name
 -- ON table(column_in_table);
 
-CREATE INDEX clientname
+CREATE INDEX clientname1
 ON client (clientname);
 
 SELECT * 
@@ -76,7 +78,7 @@ SHOW INDEXES FROM client;
 ## SECURITY in SQL
 
 -- syntax
--- GRANT privilege_type ON table_name TO user_name
+-- GRANT privilege_type ON table_name TO user_name or role
 -- ON object
 -- TO user_role;
 
