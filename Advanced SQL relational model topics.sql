@@ -54,5 +54,17 @@ ON client (clientname);
 SELECT * 
 FROM client;
 
+-- single-field-index (single-column index)
+-- multiple field index-- multiple column index or composite key
+
+## Multiple Column index
+CREATE INDEX consltbal
+ON client(consltnum, balance DESC);
+
+SHOW INDEXES FROM client;
+
+-- syntax
+-- DROP INDEX index_name;
+
 
 
