@@ -8,6 +8,13 @@ USE bits;
 
 SHOW TABLES;
 
+-- syntax
+-- CREATE VIEW view_name AS
+-- SELECT columns_from_table_in _DB
+-- FROM atble_in _DB
+-- WHERE column_in table><== condition;
+
+
 CREATE VIEW Hardware AS
 SELECT taskid, description, price
 FROM tasks
@@ -32,6 +39,20 @@ DESCRIBE TABLE tasks;
 -- It is the main mechanism for increasing the efficiency with which data is retreived from a database table
 -- An index is a database-generated copy of a selected column organized so that it directly refers to the 
 -- storage location of the data
+-- As a data structure indexes are used to improve the execution time of queries and searches
+-- in large databases
+-- indexes are assigned automatically and used internally by the DBMS, not by its users
+-- The columns or combination of columns on which the index is built is called the index-key
+
+-- syntax
+-- CREATE INDEX index_name
+-- ON table(column_in_table);
+
+CREATE INDEX clientname
+ON client (clientname);
+
+SELECT * 
+FROM client;
 
 
 
