@@ -64,7 +64,16 @@ ON client(consltnum, balance DESC);
 SHOW INDEXES FROM client;
 
 -- syntax
--- DROP INDEX index_name;
+-- DROP INDEX index_name
+-- ON table_name;
+
+
+DROP INDEX consltbal
+ON client;
+
+SHOW INDEXES FROM client;
+
+## SECURITY in SQL
 
 
 
