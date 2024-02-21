@@ -60,20 +60,74 @@ SELECT *
 FROM bits.workorders JOIN bits_copy.workorders
 USING (clientnum);
 
+
 -- Functions in SQL
+-- User-Defined Functions (UDFs) in SQL are functions created by users to perform
+-- operations that are not available through built-in SQL functions. 
+-- UDFs can return scalar values, tables,
+--  or both, depending on their type and the specific needs they address.
+
+
 -- Syntax
--- CREATE FUNCTION [database_name.]function_name (parameters)
--- RETURNS data_type AS
+-- CREATE FUNCTION func_name (parameters)
+-- RETURNS return_type
 -- BEGIN
---     SQL statements
- --    RETURN value
+-- function body
 -- END;
-    
--- ALTER FUNCTION [database_name.]function_name (parameters)
--- RETURNS data_type AS
+-- USE bits;
+
+-- SET GLOBAL log_bin_trust_function_creators = 1; -- Do not do this with the original data base
+-- always work with a copy of your DB
+ -- USE bits;
+
+-- DELIMITER $$
+-- This sets the delimiter to "$$" instead of the default ";" 
+-- so that the function definition can include semicolons without causing errors.
+
+-- DELIMITER $$:
+-- This sets the delimiter to "$$" instead of the default ";" so that the function definition can include semicolons without causing errors.
+-- CREATE FUNCTION:
+-- This creates a new function that takes two integer parameters (a and b).
+-- BEGIN:
+-- This is the start of block of code that defines what the function does.
+-- RETURN a + b;:
+-- This is the actual logic of the function. 
+-- It adds the two parameters (a and b) together and returns the result.
+-- END$$:
+-- This marks the end of the function definition block.
+-- DELIMITER ; This resets the delimiter to ";"
+
+-- Creating a function to add two parameters a and b
+
+DELIMITER $$
+
+-- CREATE FUNCTION ADD_NUM(a INT, b INT) RETURNS INT
 -- BEGIN
- --   SQL statements
--- RETURN value
--- END;
-    
--- DROP FUNCTION [database_name.]function_name;
+-- RETURN a + b;
+-- END $$
+
+DELIMITER ;
+
+
+-- SELECT ADD_NUM(10, 12);
+DELIMITER //
+-- CREATE FUNCTION average_balance() RETURNS INT
+ -- BEGIN
+ --  DECLARE result INT;
+-- SET result = (SELECT AVG(`balance`) FROM bits.client);
+-- RETURN result;
+-- END //
+
+
+SELECT bits.average();
+
+DELIMITER $$
+
+
+-- SHOW available functions in the database
+SHOW FUNCTION STATUS;
+
+-- Functions are database specific.
+USE sports;
+
+SELECT bits.average();
