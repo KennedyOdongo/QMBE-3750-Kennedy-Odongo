@@ -1,5 +1,7 @@
 USE bits;
 
+select *
+from client;
 -- 2nd normal form
 
 SELECT a.ordernum, a.orderdate, b.taskid, b.description, c.ScheduledDate, c.quotedprice
