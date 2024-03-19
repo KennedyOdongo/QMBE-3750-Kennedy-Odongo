@@ -1,14 +1,18 @@
-CREATE DATABASE insert_data;
+CREATE DATABASE insert_data_class;
 SHOW TABLES;
 USE insert_data;
 
+SELECT *
+FROM rottentomatoscores;
+
+-- using rottentomatoes.csv on Canvas course space.
 -- 1. Using basic insert statement (We have covered this already).
 
 -- 2. Using MySQL Workbench import Wizard
 -- Right click on database -> Table Data Import Wizard -> Browse and load from file
 
 -- 3. Using SQL commands (Code)
--- using rottentomatoes.csv on Canvas course space.
+
 -- You don't need to have an existing table but you can create one in the import process
 -- import .csv file and update column names and data types afterwards
 
@@ -26,7 +30,10 @@ SET GLOBAL local_infile = TRUE;
 	id INT,
    movie VARCHAR(255),
     rating VARCHAR(6));
- 
+    
+    SELECT COUNT(*)
+    FROM rotten_tomatoes1;
+    
 LOAD DATA LOCAL INFILE "C:/Users/rodge/Downloads/rottentomatoscores.csv" --  use forward slashes
 INTO TABLE rotten_tomatoes1 -- You have to create this table in advance
 FIELDS TERMINATED BY ','-- This means we are using a .csv file
@@ -66,4 +73,6 @@ PhoneNum CHAR(12),
 HireDate DATE );
 
 INSERT INTO Guide (SELECT * FROM colonial.guide );
+
+-- 
  
