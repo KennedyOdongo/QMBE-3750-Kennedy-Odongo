@@ -1,0 +1,4 @@
+[{"ConsltNum":"19", "LastName":"Turner", "FirstName":"Christopher", "Street":"554 Brown Dr.", "City":"Tri City", "State":"FL", "ZipCode":"32889", "Hours":40.0, "Rate":22.5},
+ {"ConsltNum":"22", "LastName":"Jordan", "FirstName":"Patrick", "Street":"2287 Port Rd.", "City":"Easton", "State":"FL", "ZipCode":"33998", "Hours":40.0, "Rate":22.5},
+ {"ConsltNum":"35", "LastName":"Allen", "FirstName":"Sarah", "Street":"82 Elliott St.", "City":"Lizton", "State":"FL", "ZipCode":"34344", "Hours":35.0, "Rate":20.0},
+ {"ConsltNum":"51", "LastName":"Shields", "FirstName":"Tom", "Street":"373 Lincoln Ln.", "City":"Sunland", "State":"FL", "ZipCode":"39876", "Hours":10.0, "Rate":15.0}]

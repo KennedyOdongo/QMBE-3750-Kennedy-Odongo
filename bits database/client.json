@@ -1,0 +1,12 @@
+[{"ClientNum":"143", "ClientName":"Hershey, Jarrod", "Street":"135 E. Mill Street", "City":"Easton", "State":"FL", "ZipCode":"33998", "Balance":1904.55, "CreditLimit":2500.0, "ConsltNum":"19"},
+ {"ClientNum":"299", "ClientName":"Two Crafty Cousins", "Street":"9787 NCR 350 West", "City":"Sunland", "State":"FL", "ZipCode":"39876", "Balance":8354.0, "CreditLimit":10000.0, "ConsltNum":"22"},
+ {"ClientNum":"322", "ClientName":"Prichards Pizza & Pasta", "Street":"501 Air Parkway", "City":"Lizton", "State":"FL", "ZipCode":"34344", "Balance":7335.55, "CreditLimit":10000.0, "ConsltNum":"35"},
+ {"ClientNum":"363", "ClientName":"Salazar, Jason", "Street":"56473 Cherry Tree Dr", "City":"Easton", "State":"FL", "ZipCode":"33998", "Balance":900.75, "CreditLimit":2500.0, "ConsltNum":"35"},
+ {"ClientNum":"405", "ClientName":"Fishermans Spot Shop", "Street":"49 Elwood Ave.", "City":"Harpersburg", "State":"FL", "ZipCode":"31234", "Balance":4113.4, "CreditLimit":7500.0, "ConsltNum":"19"},
+ {"ClientNum":"449", "ClientName":"Seymour, Lindsey", "Street":"4091 Brentwood Ln", "City":"Amo", "State":"FL", "ZipCode":"34466", "Balance":557.7, "CreditLimit":5000.0, "ConsltNum":"22"},
+ {"ClientNum":"458", "ClientName":"Bonnies Beautiful Boutique", "Street":"9565 Ridge Rd.", "City":"Tri City", "State":"FL", "ZipCode":"32889", "Balance":4053.8, "CreditLimit":7500.0, "ConsltNum":"22"},
+ {"ClientNum":"677", "ClientName":"Yates, Nick", "Street":"231 Day Rd.", "City":"Sunland", "State":"FL", "ZipCode":"39876", "Balance":2523.8, "CreditLimit":2500.0, "ConsltNum":"35"},
+ {"ClientNum":"733", "ClientName":"Howler, Laura", "Street":"1368 E. 1000 S.", "City":"Lizton", "State":"FL", "ZipCode":"34344", "Balance":3658.05, "CreditLimit":5000.0, "ConsltNum":"22"},
+ {"ClientNum":"75", "ClientName":"Goduto, Sean", "Street":"12 Saratoga Parkway", "City":"Tri City", "State":"FL", "ZipCode":"32889", "Balance":2814.55, "CreditLimit":5000.0, "ConsltNum":"19"},
+ {"ClientNum":"826", "ClientName":"Harpersburg Bank", "Street":"65 Forrest Blvd.", "City":"Harpersburg", "State":"FL", "ZipCode":"31234", "Balance":6824.55, "CreditLimit":10000.0, "ConsltNum":"19"},
+ {"ClientNum":"867", "ClientName":"MarketPoint Sales", "Street":"826 Host St.", "City":"Easton", "State":"FL", "ZipCode":"33998", "Balance":3089.0, "CreditLimit":5000.0, "ConsltNum":"19"}]

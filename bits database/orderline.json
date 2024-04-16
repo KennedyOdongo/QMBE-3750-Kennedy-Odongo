@@ -1,0 +1,12 @@
+[{"OrderNum":"67101", "TaskID":"SI77", "ScheduledDate":"2018-09-10", "QuotedPrice":144.0},
+ {"OrderNum":"67313", "TaskID":"LA81", "ScheduledDate":"2018-09-12", "QuotedPrice":104.0},
+ {"OrderNum":"67424", "TaskID":"MO49", "ScheduledDate":"2018-09-14", "QuotedPrice":65.0},
+ {"OrderNum":"67424", "TaskID":"UP38", "ScheduledDate":"2018-09-14", "QuotedPrice":185.0},
+ {"OrderNum":"67838", "TaskID":"LA81", "ScheduledDate":"2018-09-14", "QuotedPrice":104.0},
+ {"OrderNum":"67949", "TaskID":"PI54", "ScheduledDate":"2018-09-21", "QuotedPrice":50.0},
+ {"OrderNum":"67949", "TaskID":"VR39", "ScheduledDate":"2018-09-21", "QuotedPrice":88.0},
+ {"OrderNum":"67949", "TaskID":"WA33", "ScheduledDate":"2018-09-21", "QuotedPrice":126.0},
+ {"OrderNum":"68252", "TaskID":"DI85", "ScheduledDate":"2018-09-24", "QuotedPrice":50.0},
+ {"OrderNum":"68868", "TaskID":"SA44", "ScheduledDate":"2018-09-24", "QuotedPrice":200.0},
+ {"OrderNum":"68979", "TaskID":"AC65", "ScheduledDate":"2018-09-27", "QuotedPrice":77.0},
+ {"OrderNum":"68979", "TaskID":"DA11", "ScheduledDate":"2018-09-27", "QuotedPrice":970.0}]
